@@ -1,0 +1,27 @@
+logging:
+  level: 
+    org:
+     hibernate: INFO  
+           
+---
+
+spring:
+  profiles: test
+
+  jpa:
+    show-sql: true
+    open-in-view: false
+    hibernate:    
+      ddl-auto: update
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/pccwglobaltest?useSSL=false&useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: marsroot
+    driver-class-name: com.mysql.jdbc.Driver
+
+api-server-base-url: http://localhost:8081/users
+---
+spring:
+  profiles:
+    active: test
